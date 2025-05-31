@@ -1,0 +1,20 @@
+[project]
+name = "kaggle-openai-amazon"
+version = "0.1.0"
+description = ""
+authors = [
+    {name = "dr_aha"}
+]
+readme = "README.md"
+requires-python = ">=3.12,<3.14"
+dependencies = [
+    "autogen (>=0.9.1.post0,<0.10.0)",
+    "autogen-core (>=0.5.7,<0.6.0)",
+    "autogen-ext (>=0.5.7,<0.6.0)",
+    "openai (>=1.82.1,<2.0.0)"
+]
+
+
+[build-system]
+requires = ["poetry-core>=2.0.0,<3.0.0"]
+build-backend = "poetry.core.masonry.api"
