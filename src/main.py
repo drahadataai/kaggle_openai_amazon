@@ -16,7 +16,7 @@ from src.utils.data_class import Message
 from src.z_agent import ZAgent
 from src.utils.model_clients import openai_model_client, openai_model_client_o4_mini
 from src.utils.tools import get_archaeological_sites
-from src.utils.prompts import z_agent_prompt_v2, z_agent_prompt_v1
+from src.utils.prompts import user_agent_prompt_v1
 import asyncio
 
 
@@ -54,6 +54,7 @@ async def main():
             description="Get a list of potential archaeological sites based on the provided location.",
         )
     ]
+    # z_agent_tools: List[Tool] = []
 
     # Register the z_agent_tools with ToolAgent
     await ToolAgent.register(
@@ -72,7 +73,7 @@ async def main():
 
     await runtime.publish_message(
         topic_id=TopicId(z_agent_topic_type, source="user"),
-        message=Message(content=z_agent_prompt_v2),
+        message=Message(content=user_agent_prompt_v1),
     )
 
     await runtime.stop_when_idle()

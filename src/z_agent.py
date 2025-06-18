@@ -22,6 +22,7 @@ from autogen_core.models import (
 
 from typing import List, Dict, Any
 from src.utils.data_class import Message
+from src.utils.prompts import z_agent_prompt_v2
 from autogen_core import RoutedAgent, AgentId
 
 @type_subscription(topic_type=z_agent_topic_type)
@@ -39,7 +40,7 @@ class ZAgent(RoutedAgent):
         self._model_client = model_client
         self._system_messages: List[LLMMessage] = [
             SystemMessage(
-                content="You are a helpful agent that can use tools to assist with tasks."
+                content=z_agent_prompt_v2
             )
         ]
         self._tool_schema = tool_schema
