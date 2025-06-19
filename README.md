@@ -1,5 +1,5 @@
 # kaggle_openai_amazon
-<<<<<<< HEAD
+
 =======
 
 ## 1. How to create new branch from main:
@@ -44,4 +44,3 @@ To use it, imput lat, long using comma seperation\
 Results pictures will be saved in Robo_Predict_dataset.\
 A hisory of all checked files are saved in  "Predictions.json" under the same workfolder.\
 The index.txt is a temp file to store how many images has been checked.\
->>>>>>> yan_branch
