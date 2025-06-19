@@ -4,7 +4,7 @@ This script loads a Roboflow model and uses it to make predictions on an image.
 It requires the Roboflow API key to be set as an environment variable.
 Make sure to set the environment variable ROBOFLOW_API_KEY and GOOGLE_STATIC_MAPS_API_KEY
 # You can set it in your terminal by running:
-    export ROBOFLOW_API_KEY="Oc0uAeUJumJDwgYINfjQ"
+    export ROBOFLOW_API_KEY="your_api_key_here"
     export GOOGLE_STATIC_MAPS_API_KEY="your_api_key_here"
 """
 
