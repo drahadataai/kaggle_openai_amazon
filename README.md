@@ -1,7 +1,5 @@
 # kaggle_openai_amazon
 
-=======
-
 ## 1. How to create new branch from main:
 ### 1.1 create clone the repo
 * creata a new folder: "DrAha"
