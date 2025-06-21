@@ -1,0 +1,34 @@
+# Byte-compiled / optimized / DLL files
+__pycache__/
+*.py[cod]
+*.pyc
+*$py.class
+
+# Virtual environments
+venv/
+.env/
+.envrc
+
+# Jupyter Notebook checkpoints
+.ipynb_checkpoints
+
+# Mac system files
+.DS_Store
+
+# VS Code settings
+.vscode/
+
+# Logs
+*.log
+
+# Secrets and environment variables
+*.env
+
+# Test and data outputs
+*.out
+*.tmp
+*.bak
+
+# RoboFlow and Google image datasets (customize as needed)
+Robo_Predict_dataset/
+data/google_image_to_be_detected/

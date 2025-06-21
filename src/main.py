@@ -51,7 +51,7 @@ async def main():
     z_agent_tools: List[Tool] = [
         FunctionTool(
             get_archaeological_sites,
-            description="Get a list of potential archaeological sites based on the provided location.",
+            description="Get a list of potential archaeological sites based on the provided lat and long.",
         )
     ]
     # z_agent_tools: List[Tool] = []
