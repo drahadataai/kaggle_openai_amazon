@@ -16,7 +16,7 @@ from src.utils.data_class import Message
 from src.z_agent import ZAgent
 from src.utils.model_clients import openai_model_client, openai_model_client_o4_mini
 from src.utils.tools import get_archaeological_sites
-from src.utils.prompts import user_agent_prompt_v1
+from src.utils.prompts import user_agent_prompt_v2
 import asyncio
 
 
@@ -73,7 +73,7 @@ async def main():
 
     await runtime.publish_message(
         topic_id=TopicId(z_agent_topic_type, source="user"),
-        message=Message(content=user_agent_prompt_v1),
+        message=Message(content=user_agent_prompt_v2),
     )
 
     await runtime.stop_when_idle()
