@@ -16,6 +16,8 @@ import requests
 import json
 import sys
 from datetime import datetime
+from ultralytics import YOLO
+import matplotlib.pyplot as plt
 
 
 # create a test dataset folder to store the images
@@ -78,10 +80,8 @@ test['url'] = f"https://maps.googleapis.com/maps/api/staticmap?center={test['lat
 
 get_image_from_url(test['url'], f"{test_image}.png", data_folder)
 
-# Load Roboflow model
-rf = Roboflow(api_key=robo_api_key)
-project = rf.workspace("draha").project("ee-archae_sites").version(4)
-model = project.model
+# Load YOLO model
+model = YOLO("src/model/weights.pt") 
 folder_path=data_folder
 image_name = f"{test_image}.png"
 image_path = "{}/{}".format(folder_path, image_name)
