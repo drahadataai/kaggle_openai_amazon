@@ -35,7 +35,6 @@ if you can see the ZAgent response, it is successful.
 This is a yolo_v11 model to predict if there is a archae sites for a given lat,long.
 
 To run this, you need api from roboflow and google static maps, you can set it in terminal by running:\
-    ``` export ROBOFLOW_API_KEY="roboflow_api here"```\
     ``` export GOOGLE_STATIC_MAPS_API_KEY="your_api_key_here"```
 
 To use it, imput lat, long using comma seperation
