@@ -1,11 +1,13 @@
 from typing import List
 import logging
 from roboflow import Roboflow
-from src.utils.constant import robo_api_key, google_api_key 
+from src.utils.constant import google_api_key 
 import requests
 import os
 import sys
 import cv2
+from ultralytics import YOLO
+import matplotlib.pyplot as plt
 
 
 
@@ -155,10 +157,7 @@ async def detect_sites_in_image(image_path: str) -> List[dict]:
         List[dict]: A list of detected archaeological sites with their coordinates.
     """
 
-    # Load Roboflow model
-    rf = Roboflow(api_key=robo_api_key)
-    project = rf.workspace("draha").project("ee-archae_sites").version(4)
-    model = project.model
+    model = YOLO("src/model/weights.pt") 
 
     prediction = model.predict(image_path).json()
     print(prediction)
@@ -252,3 +251,11 @@ async def get_archaeological_sites(lat:float, long:float) -> List[str]:
     #     analysis = await analyze_satellite_image(site_image_url)
     #     results.append(f"{site_name} - Valid: {is_valid}. Analysis: {analysis}")
     return candidates
+
+
+if __name__ == "__main__":
+    model = YOLO("src/model/weights.pt") 
+    print("Model loaded successfully.")
+    # Run inference with GPU
+    results = model("src/model/image_1126.png", device="mps")
+    results[0].show()
